@@ -4,7 +4,7 @@ import SidebarMenu from './components/sidebar/sidebarmenu';
 function App() {
   return (
     <div className="">
-      <SidebarMenu />
+      <Login />
     </div>
   );
 }

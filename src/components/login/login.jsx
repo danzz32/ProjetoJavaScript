@@ -3,6 +3,7 @@ import { BiSolidLockAlt } from 'react-icons/bi';
 import { BsEyeFill } from 'react-icons/bs';
 import './login.css';
 import Footer from "../footer/footer";
+import SidebarMenu from "../sidebar/sidebarmenu";
 
 const logo = require('../../images/logo.png');
 const gov = require('../../images/gov.png');
@@ -10,6 +11,7 @@ const gov = require('../../images/gov.png');
 export default function Login() {
     return (
         <div>
+            <SidebarMenu />
             <div className="principal flex w-full h-full justify-center items-center ">
                 <div className="flex flex-col w-[47%]  text-sm border bg-white rounded-md gap-3 p-10 mt-16 mb-2 overflow-auto">
                     <div className="relative mx-auto pt-2">
