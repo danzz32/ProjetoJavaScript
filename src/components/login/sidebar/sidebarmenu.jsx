@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FiArrowLeftCircle, FiArrowRightCircle } from 'react-icons/fi';
 
-const logo = require('../../images/suap1.png');
-const logo2 = require('../../images/logo2.png');
+const logo = require('../../../images/suap1.png');
+const logo2 = require('../../../images/logo2.png');
 
 export default function SidebarMenu() {
     const [showAcessos, setShowAcessos] = useState(false);

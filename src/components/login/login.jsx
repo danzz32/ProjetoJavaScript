@@ -2,8 +2,8 @@ import React from "react";
 import { BiSolidLockAlt } from 'react-icons/bi';
 import { BsEyeFill } from 'react-icons/bs';
 import './login.css';
-import Footer from "../footer/footer";
-import SidebarMenu from "../sidebar/sidebarmenu";
+import Footer from "./footer/footer";
+import SidebarMenu from "./sidebar/sidebarmenu";
 
 const logo = require('../../images/logo.png');
 const gov = require('../../images/gov.png');
