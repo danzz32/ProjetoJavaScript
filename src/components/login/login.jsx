@@ -10,7 +10,7 @@ const gov = require('../../images/gov.png');
 
 export default function Login() {
     return (
-        <div>
+        <div className="log selection:bg-green-800 selection:text-white">
             <SidebarMenu />
             <div className="principal flex w-full h-full justify-center items-center ">
                 <div className="flex flex-col w-[47%]  text-sm border bg-white rounded-md gap-3 p-10 mt-16 mb-2 overflow-auto">
@@ -28,9 +28,9 @@ export default function Login() {
                         <div className="mt-3 ">
                             <label htmlFor="pass" className="text-gray-500">Senha:</label><br />
                             <div className="flex items-center">
-                                <input type="password" name="pass" id="" className="w-full p-2 border rounded-s-md " />
+                                <input type="password" name="pass" id="" className="w-full p-2 border rounded-md " />
                                 <div className="h-full">
-                                    <BsEyeFill className="w-10 m-0 border rounded-e-md border-s-0 h-[100%] px-2 py-2" />
+                                    <BsEyeFill className="w-10 m-0 h-[100%] px-2 py-2" />
                                 </div>
                             </div>
                         </div>

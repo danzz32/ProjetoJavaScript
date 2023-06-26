@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 import { FiArrowLeftCircle, FiArrowRightCircle } from 'react-icons/fi';
+import * as BiIcons from 'react-icons/bi';
+import * as FaIcons from 'react-icons/fa';
+import * as PiIcons from 'react-icons/pi';
+import * as ImIcons from 'react-icons/im';
+import * as IoMd from 'react-icons/io';
+import * as HiIcons from 'react-icons/hi';
+import * as TiIcons from 'react-icons/ti';
+import * as BsIcons from 'react-icons/bs';
 
 const logo = require('../../../images/suap1.png');
 const logo2 = require('../../../images/logo2.png');
@@ -47,13 +55,13 @@ export default function SidebarMenu() {
                             {showAcessos && (
                                 <ul>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Login</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><BiIcons.BiSolidLockAlt className="mr-2" /> Login</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Alterar Senha</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><FaIcons.FaKey className="mr-2" /> Alterar Senha</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Acesso do Responsável</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><PiIcons.PiIdentificationBadgeFill className="mr-2"/> Acesso do Responsável</a>
                                     </li>
                                 </ul>
                             )}
@@ -65,16 +73,16 @@ export default function SidebarMenu() {
                             {showAutenticacao && (
                                 <ul>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Documentos Eletrônicos</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><BiIcons.BiSolidLockAlt className="mr-2" /> Documentos Eletrônicos</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Documentos Gerais</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><BiIcons.BiSolidLockAlt className="mr-2" /> Documentos Gerais</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Assinaturas Digitais</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><BiIcons.BiSolidLockAlt className="mr-2" /> Assinaturas Digitais</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Certificados de Mincursos</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><BiIcons.BiSolidLockAlt className="mr-2" /> Certificados de Mincursos</a>
                                     </li>
                                 </ul>
                             )}
@@ -86,10 +94,10 @@ export default function SidebarMenu() {
                             {showAvaliacoes && (
                                 <ul>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Avaliação de Estágio</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><ImIcons.ImStatsDots className="mr-2"/> Avaliação de Estágio</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Avaliação Integrada</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><IoMd.IoMdDocument className="mr-2"/> Avaliação Integrada</a>
                                     </li>
                                 </ul>
                             )}
@@ -101,10 +109,10 @@ export default function SidebarMenu() {
                             {showBalcaoDigital && (
                                 <ul>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Protocolar Documentos</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><HiIcons.HiDocumentText className="mr-2"/> Protocolar Documentos</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Demais serviços via GOV.BR</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><TiIcons.TiStarburst className="mr-2"/> Demais serviços via GOV.BR</a>
                                     </li>
                                 </ul>
                             )}
@@ -116,22 +124,22 @@ export default function SidebarMenu() {
                             {showConsultas && (
                                 <ul>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Processos Físicos</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><HiIcons.HiDocumentText className="mr-2"/> Processos Físicos</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Registro de Diplomas</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><TiIcons.TiStarburst className="mr-2"/> Registro de Diplomas</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Processos Eletrônicos</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><IoMd.IoMdDocument className="mr-2"/> Processos Eletrônicos</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Contratos</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><FaIcons.FaFileContract className="mr-2"/> Contratos</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Atualizações do Sistema</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><FaIcons.FaFileContract className="mr-2"/> Atualizações do Sistema</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Rol de Responsáveis</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><HiIcons.HiDocumentText className="mr-2"/> Rol de Responsáveis</a>
                                     </li>
                                 </ul>
                             )}
@@ -143,7 +151,7 @@ export default function SidebarMenu() {
                             {showEditora && (
                                 <ul>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Seja um Parecerista</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><HiIcons.HiDocumentText className="mr-2"/> Seja um Parecerista</a>
                                     </li>
                                 </ul>
                             )}
@@ -155,7 +163,7 @@ export default function SidebarMenu() {
                             {showEventos && (
                                 <ul>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Realizar inscrição em Evento</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><TiIcons.TiStarburst className="mr-2"/> Realizar inscrição em Evento</a>
                                     </li>
                                 </ul>
                             )}
@@ -167,10 +175,10 @@ export default function SidebarMenu() {
                             {showProgramaGestao && (
                                 <ul>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Painel</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><ImIcons.ImStatsDots className="mr-2"/> Painel</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Planos de Trabalho</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><FaIcons.FaSearch className="mr-2"/> Planos de Trabalho</a>
                                     </li>
                                 </ul>
                             )}
@@ -182,13 +190,13 @@ export default function SidebarMenu() {
                             {showRelatorios && (
                                 <ul>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Indicadores RH</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><IoMd.IoMdDocument className="mr-2"/> Indicadores RH</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Certificação ENCCEJA / ENEM</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><TiIcons.TiStarburst className="mr-2"/> Certificação ENCCEJA / ENEM</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Realtórios individuais de Trabalho</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><IoMd.IoMdDocument className="mr-2"/> Realtórios individuais de Trabalho</a>
                                     </li>
                                 </ul>
                             )}
@@ -200,13 +208,13 @@ export default function SidebarMenu() {
                             {showSolicitacoes && (
                                 <ul>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Certificação ENEM</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><TiIcons.TiStarburst className="mr-2"/> Certificação ENEM</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Demandas da Comunidade</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><HiIcons.HiDocumentText className="mr-2"/> Demandas da Comunidade</a>
                                     </li>
                                     <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Fale com a Ouvidoria</a>
+                                        <a href="" className="hover:text-lime-500 flex items-center"><BsIcons.BsMegaphoneFill className="mr-2"/> Fale com a Ouvidoria</a>
                                     </li>
                                 </ul>
                             )}
