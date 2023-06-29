@@ -6,7 +6,7 @@ import { BsFillPersonBadgeFill } from 'react-icons/bs';
 
 export default function Footer() {
     return (
-        <div>
+        <div className="bg-zinc-800 text-neutral-400">
             <ul className="flex justify-center p-4 text-sm font-mono">
                 <li className="mx-4 flex"> <BiLogoCreativeCommons className="h-[100%]" /><span className="pl-2">2023 SUAP</span></li>
                 <li className="mx-4 flex"> <BiLogoPython className="h-[100%]" /><span className="pl-2"> Desenvolvido por IFMA/IFRN</span></li>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FiArrowLeftCircle, FiArrowRightCircle } from 'react-icons/fi';
 import * as BiIcons from 'react-icons/bi';
 import * as FaIcons from 'react-icons/fa';
 import * as PiIcons from 'react-icons/pi';
@@ -24,23 +23,14 @@ export default function SidebarMenu() {
     const [showRelatorios, setShowRelatorios] = useState(false);
     const [showSolicitacoes, setShowSolicitacoes] = useState(false);
 
-    const [hideElements, setHideElements] = useState(false);
-
-    const handleCloseClick = () => {
-        setHideElements(true);
-    };
-
-    const handleShowClick = () => {
-        setHideElements(false);
-    };
+    
 
     return (
-        <div>
-            <div className="absolute w-[27%]">
+        <div className="mr-4">
+            <div className="w-80">
                 <div className="flex">
                     <div
-                        className={`flex min-h-min w-full bg-stone-800 opacity-75 text-neutral-400 ${hideElements ? 'hidden' : 'block'
-                            }`}
+                        className={`flex min-h-min w-full bg-stone-800 opacity-80 text-neutral-400 `}
                     >
                         <div className="flex w-full min-h-screen justify-start flex-col">
                             <div className="pl-5 flex flex-col mt-7 mb-5">
@@ -50,7 +40,7 @@ export default function SidebarMenu() {
                                 </div>
                             </div>
                             <div className="w-[90%] pl-5">
-                                <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowAcessos(!showAcessos)}>
+                                <button className="flex text-base w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowAcessos(!showAcessos)}>
                                     ACESSOS
                                 </button>
                                 {showAcessos && (
@@ -68,7 +58,7 @@ export default function SidebarMenu() {
                                 )}
                             </div>
                             <div className="w-[90%] pl-5">
-                                <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowAutenticacao(!showAutenticacao)}>
+                                <button className="flex text-left w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowAutenticacao(!showAutenticacao)}>
                                     AUTENTICAÇÃO DE DOCUMENTOS
                                 </button>
                                 {showAutenticacao && (
@@ -170,7 +160,7 @@ export default function SidebarMenu() {
                                 )}
                             </div>
                             <div className="w-[90%] pl-5">
-                                <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowProgramaGestao(!showProgramaGestao)}>
+                                <button className="flex text-left w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowProgramaGestao(!showProgramaGestao)}>
                                     PROGRAMA DE GESTÃO E DESEMPENHO
                                 </button>
                                 {showProgramaGestao && (
@@ -222,19 +212,7 @@ export default function SidebarMenu() {
                             </div>
                         </div>
                     </div>
-                    {hideElements ? (
-                        <div className="flex items-center justify-between">
-                            <button onClick={handleShowClick}>
-                                <FiArrowLeftCircle className="text-zinc-400" />
-                            </button>
-                        </div>
-                    ) : (
-                        <div className="flex items-center justify-center">
-                            <button onClick={handleCloseClick}>
-                                <FiArrowRightCircle className="text-zinc-400" />
-                            </button>
-                        </div>
-                    )}
+                    
                 </div>
             </div>
         </div>
