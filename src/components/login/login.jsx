@@ -7,48 +7,43 @@ import { useState } from 'react';
 import { FiArrowLeftCircle, FiArrowRightCircle } from 'react-icons/fi';
 
 export default function Login() {
-    const [hideElements, setHideElements] = useState(false);
+    const [hideSidebar, setHideSidebar] = useState(false);
+    const [buttonIcon, setButtonIcon] = useState(<FiArrowLeftCircle />);
 
-    const handleCloseClick = () => {
-        setHideElements(true);
-    };
-
-    const handleShowClick = () => {
-        setHideElements(false);
+    const toggleSidebar = () => {
+        setHideSidebar(!hideSidebar);
+        setButtonIcon(hideSidebar ? <FiArrowLeftCircle /> : <FiArrowRightCircle />);
     };
 
     return (
         <div className="log w-full min-h-screen selection:bg-green-800 selection:text-white">
             <div className="flex">
-                <div className={`${hideElements ? 'hidden' : 'block'
-                    }`}>
-                    <SidebarMenu />
-                </div>
-                {hideElements ? (
-                    <div className="flex ml-0 justify-items-center">
-                        <button onClick={handleShowClick}>
-                            <FiArrowLeftCircle className="text-zinc-400" />
-                        </button>
-                    </div>
-                ) : (
-                    <div className="flex left-0 items-center justify-center">
-                        <button onClick={handleCloseClick}>
-                            <FiArrowRightCircle className="text-zinc-400" />
+                {!hideSidebar && (
+                    <div className="flex">
+                        <div className="flex">
+                            <SidebarMenu />
+                        </div>
+                        <button className="text-zinc-400" onClick={toggleSidebar}>
+                            {buttonIcon}
                         </button>
                     </div>
                 )}
-            </div>
-            <div className="flex flex-col">
-                <div className="flex-grow">
+                {hideSidebar && (
+                    <div className="flex">
+                        <button className="text-zinc-400" onClick={toggleSidebar}>
+                            {buttonIcon}
+                        </button>
+                    </div>
+                )}
+                <div className={`flex-grow ${hideSidebar ? 'ml-auto mr-auto' : ''}`}>
                     <div className="flex">
                         <Main />
                     </div>
                 </div>
-                <div className="mt-auto fixed-bottom">
-                    <Footer />
-                </div>
+            </div>
+            <div className="mt-auto fixed-bottom">
+                <Footer />
             </div>
         </div>
-
-    )
+    );
 }
