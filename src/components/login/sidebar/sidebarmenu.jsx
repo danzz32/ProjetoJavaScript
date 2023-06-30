@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { FiArrowLeftCircle, FiArrowRightCircle } from 'react-icons/fi';
+import * as BiIcons from 'react-icons/bi';
+import * as FaIcons from 'react-icons/fa';
+import * as PiIcons from 'react-icons/pi';
+import * as ImIcons from 'react-icons/im';
+import * as IoMd from 'react-icons/io';
+import * as HiIcons from 'react-icons/hi';
+import * as TiIcons from 'react-icons/ti';
+import * as BsIcons from 'react-icons/bs';
+import * as AiIcons from 'react-icons/ai';
 
 const logo = require('../../../images/suap1.png');
 const logo2 = require('../../../images/logo2.png');
@@ -16,217 +24,239 @@ export default function SidebarMenu() {
     const [showRelatorios, setShowRelatorios] = useState(false);
     const [showSolicitacoes, setShowSolicitacoes] = useState(false);
 
-    const [hideElements, setHideElements] = useState(false);
+    const SidebarItem = ({ title, onClick, showSubMenu, subMenu }) => (
+        <div className="w-[90%] pl-5">
+            <button className="flex text-left text-lg w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={onClick}>
+                {title}
+            </button>
+            {showSubMenu && (
+                <ul>
+                    {subMenu.map((item, index) => (
+                        <li key={index} className="border-b text-sm border-black py-1 my-1 ml-4">
+                            <a href="" className="hover:text-lime-500 flex items-center">
+                                {item.icon}
+                                {item.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    );
 
-    const handleCloseClick = () => {
-        setHideElements(true);
-    };
+    const subMenuAcessos = [
+        {
+            label: "Login",
+            icon: <BiIcons.BiSolidLockAlt className="mr-2" />
+        },
+        {
+            label: "Alterar Senha",
+            icon: <FaIcons.FaKey className="mr-2" />
+        },
+        {
+            label: "Acesso do Responsável",
+            icon: <PiIcons.PiIdentificationBadgeFill className="mr-2" />
+        }
+    ];
 
-    const handleShowClick = () => {
-        setHideElements(false);
-    };
+    const subMenuAutenticacao = [
+        {
+            label: "Documentos Eletrônicos",
+            icon: <BiIcons.BiSolidLockAlt className="mr-2" />
+        },
+        {
+            label: "Documentos Gerais",
+            icon: <BiIcons.BiSolidLockAlt className="mr-2" />
+        },
+        {
+            label: "Assinaturas Digitais",
+            icon: <BiIcons.BiSolidLockAlt className="mr-2" />
+        },
+        {
+            label: "Certificados de Mincursos",
+            icon: <BiIcons.BiSolidLockAlt className="mr-2" />
+        }
+    ];
+
+    const subMenuAvaliacoes = [
+        {
+            label: "Avaliação de Estágio",
+            icon: <ImIcons.ImStatsDots className="mr-2" />
+        },
+        {
+            label: "Avaliação Integrada",
+            icon: <IoMd.IoMdDocument className="mr-2" />
+        }
+    ];
+
+    const subMenuBalcaoDigital = [
+        {
+            label: "Protocolar Documentos",
+            icon: <HiIcons.HiDocumentText className="mr-2" />
+        },
+        {
+            label: "Demais serviços via GOV.BR",
+            icon: <TiIcons.TiStarburst className="mr-2" />
+        }
+    ];
+
+    const subMenuConsultas = [
+        {
+            label: "Processos Físicos",
+            icon: <HiIcons.HiDocumentText className="mr-2" />
+        },
+        {
+            label: "Registro de Diplomas",
+            icon: <TiIcons.TiStarburst className="mr-2" />
+        },
+        {
+            label: "Processos Eletrônicos",
+            icon: <IoMd.IoMdDocument className="mr-2" />
+        },
+        {
+            label: "Contratos",
+            icon: <FaIcons.FaFileContract className="mr-2" />
+        },
+        {
+            label: "Atualizações do Sistema",
+            icon: <FaIcons.FaFileContract className="mr-2" />
+        },
+        {
+            label: "Rol de Responsáveis",
+            icon: <HiIcons.HiDocumentText className="mr-2" />
+        }
+    ];
+
+    const subMenuEditora = [
+        {
+            label: "Seja um Parceirista",
+            icon: <HiIcons.HiDocumentText className="mr-2" />
+        }
+    ];
+
+    const subMenuEventos = [
+        {
+            label: "Realizar inscrição em Evento",
+            icon: <TiIcons.TiStarburst className="mr-2" />
+        }
+    ];
+
+    const subMenuGestaoDesempenho = [
+        {
+            label: "Painel",
+            icon: <ImIcons.ImStatsDots className="mr-2" />
+        },
+        {
+            label: "Planos de Trabalho",
+            icon: <FaIcons.FaSearch className="mr-2" />
+        }
+    ];
+
+    const subMenuRelatorios = [
+        {
+            label: "Indicadores de RH",
+            icon: <IoMd.IoMdDocument className="mr-2" />
+        },
+        {
+            label: "Certificado do ENCCEJA/ENEM",
+            icon: <TiIcons.TiStarburst className="mr-2" />
+        },
+        {
+            label: "Relatórios individuais de Trabalho",
+            icon: <IoMd.IoMdDocument className="mr-2" />
+        }
+    ];
+
+    const subMenuSolicitacoes = [
+        {
+            label: "Certificação ENEM",
+            icon: <TiIcons.TiStarburst className="mr-2" />
+        },
+        {
+            label: "Demandas da Comunidade",
+            icon: <HiIcons.HiDocumentText className="mr-2" />
+        },
+        {
+            label: "Fale com a Ouvidoria",
+            icon: <BsIcons.BsMegaphoneFill className="mr-2" />
+        }
+    ];
 
     return (
-        <div className="absolute min-h-screen">
-            <div className="flex">
-                <div
-                    className={`flex h-full w-[27%] bg-stone-800 opacity-75 text-neutral-400 transition-all duration-500 ${hideElements ? 'hidden' : 'block'
-                        }`}
-                >
-                    <div className="flex w-full min-h-screen justify-start flex-col">
-                        <div className="pl-5 flex flex-col mt-7 mb-5">
-                            <div className="flex justify-items-center">
-                                <a href="" className="w-[40%] h-10 px-2 py-1 mt-1"><img src={logo} /></a>
-                                <a href="" className="w-[50%] h-12"><img src={logo2} /></a>
-                            </div>
-                        </div>
-                        <div className="w-[90%] pl-5">
-                            <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowAcessos(!showAcessos)}>
-                                ACESSOS
-                            </button>
-                            {showAcessos && (
-                                <ul>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Login</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Alterar Senha</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Acesso do Responsável</a>
-                                    </li>
-                                </ul>
-                            )}
-                        </div>
-                        <div className="w-[90%] pl-5">
-                            <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowAutenticacao(!showAutenticacao)}>
-                                AUTENTICAÇÃO DE DOCUMENTOS
-                            </button>
-                            {showAutenticacao && (
-                                <ul>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Documentos Eletrônicos</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Documentos Gerais</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Assinaturas Digitais</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Certificados de Mincursos</a>
-                                    </li>
-                                </ul>
-                            )}
-                        </div>
-                        <div className="w-[90%] pl-5">
-                            <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowAvaliacoes(!showAvaliacoes)}>
-                                AVALIAÇÕES
-                            </button>
-                            {showAvaliacoes && (
-                                <ul>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Avaliação de Estágio</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Avaliação Integrada</a>
-                                    </li>
-                                </ul>
-                            )}
-                        </div>
-                        <div className="w-[90%] pl-5">
-                            <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowBalcaoDigital(!showBalcaoDigital)}>
-                                BALCÃO DIGITAL
-                            </button>
-                            {showBalcaoDigital && (
-                                <ul>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Protocolar Documentos</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Demais serviços via GOV.BR</a>
-                                    </li>
-                                </ul>
-                            )}
-                        </div>
-                        <div className="w-[90%] pl-5">
-                            <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowConsultas(!showConsultas)}>
-                                CONSULTAS
-                            </button>
-                            {showConsultas && (
-                                <ul>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Processos Físicos</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Registro de Diplomas</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Processos Eletrônicos</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Contratos</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Atualizações do Sistema</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Rol de Responsáveis</a>
-                                    </li>
-                                </ul>
-                            )}
-                        </div>
-                        <div className="w-[90%] pl-5">
-                            <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowEditora(!showEditora)}>
-                                EDITORA
-                            </button>
-                            {showEditora && (
-                                <ul>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Seja um Parecerista</a>
-                                    </li>
-                                </ul>
-                            )}
-                        </div>
-                        <div className="w-[90%] pl-5">
-                            <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowEventos(!showEventos)}>
-                                EVENTOS
-                            </button>
-                            {showEventos && (
-                                <ul>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Realizar inscrição em Evento</a>
-                                    </li>
-                                </ul>
-                            )}
-                        </div>
-                        <div className="w-[90%] pl-5">
-                            <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowProgramaGestao(!showProgramaGestao)}>
-                                PROGRAMA DE GESTÃO E DESEMPENHO
-                            </button>
-                            {showProgramaGestao && (
-                                <ul>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Painel</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Planos de Trabalho</a>
-                                    </li>
-                                </ul>
-                            )}
-                        </div>
-                        <div className="w-[90%] pl-5">
-                            <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowRelatorios(!showRelatorios)}>
-                                RELATÓRIOS
-                            </button>
-                            {showRelatorios && (
-                                <ul>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Indicadores RH</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Certificação ENCCEJA / ENEM</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Realtórios individuais de Trabalho</a>
-                                    </li>
-                                </ul>
-                            )}
-                        </div>
-                        <div className="w-[90%] pl-5">
-                            <button className="flex text-2x1 w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={() => setShowSolicitacoes(!showSolicitacoes)}>
-                                SOLICITAÇÕES
-                            </button>
-                            {showSolicitacoes && (
-                                <ul>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Certificação ENEM</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Demandas da Comunidade</a>
-                                    </li>
-                                    <li className="border-b border-black py-1 my-1 ml-4">
-                                        <a href="" className="hover:text-lime-500">Fale com a Ouvidoria</a>
-                                    </li>
-                                </ul>
-                            )}
-                        </div>
+        <div className="flex">
+            <div className="sidebar w-72 bg-zinc-800 opacity-80 text-zinc-400 min-h-min pl-5">
+                <div className="sidebar-logo flex px-2 pt-7">
+                    <img src={logo} alt="Logo" className="logo w-[40%]" />
+                    <img src={logo2} alt="Logo 2" className="logo2 w-[50%]" />
+                </div>
+                <div className="sidebar-menu">
+                    <div className="menu">
+                        <ul className="nav-menu">
+                            <SidebarItem
+                                title="Acessos"
+                                onClick={() => setShowAcessos(!showAcessos)}
+                                showSubMenu={showAcessos}
+                                subMenu={subMenuAcessos}
+                            />
+                            <SidebarItem
+                                title="Autenticação"
+                                onClick={() => setShowAutenticacao(!showAutenticacao)}
+                                showSubMenu={showAutenticacao}
+                                subMenu={subMenuAutenticacao}
+                            />
+                            <SidebarItem
+                                title="Avaliações"
+                                onClick={() => setShowAvaliacoes(!showAvaliacoes)}
+                                showSubMenu={showAvaliacoes}
+                                subMenu={subMenuAvaliacoes}
+                            />
+                            <SidebarItem
+                                title="Balcão Digital"
+                                onClick={() => setShowBalcaoDigital(!showBalcaoDigital)}
+                                showSubMenu={showBalcaoDigital}
+                                subMenu={subMenuBalcaoDigital}
+                            />
+                            <SidebarItem
+                                title="Consultas"
+                                onClick={() => setShowConsultas(!showConsultas)}
+                                showSubMenu={showConsultas}
+                                subMenu={subMenuConsultas}
+                            />
+                            <SidebarItem
+                                title="Editora"
+                                onClick={() => setShowEditora(!showEditora)}
+                                showSubMenu={showEditora}
+                                subMenu={subMenuEditora}
+                            />
+                            <SidebarItem
+                                title="Eventos"
+                                onClick={() => setShowEventos(!showEventos)}
+                                showSubMenu={showEventos}
+                                subMenu={subMenuEventos}
+                            />
+                            <SidebarItem
+                                title="Programa de Gestão"
+                                onClick={() => setShowProgramaGestao(!showProgramaGestao)}
+                                showSubMenu={showProgramaGestao}
+                                subMenu={subMenuGestaoDesempenho}
+                            />
+                            <SidebarItem
+                                title="Relatórios"
+                                onClick={() => setShowRelatorios(!showRelatorios)}
+                                showSubMenu={showRelatorios}
+                                subMenu={subMenuRelatorios}
+                            />
+                            <SidebarItem
+                                title="Solicitações"
+                                onClick={() => setShowSolicitacoes(!showSolicitacoes)}
+                                showSubMenu={showSolicitacoes}
+                                subMenu={subMenuSolicitacoes}
+                            />
+                        </ul>
                     </div>
                 </div>
-                {hideElements ? (
-                    <div className="flex items-center justify-between">
-                        <button onClick={handleShowClick}>
-                            <FiArrowLeftCircle className="text-zinc-400" />
-                        </button>
-                    </div>
-                ) : (
-                    <div className="flex items-center justify-center">
-                        <button onClick={handleCloseClick}>
-                            <FiArrowRightCircle className="text-zinc-400" />
-                        </button>
-                    </div>
-                )}
             </div>
         </div>
     );
+
 }
