@@ -41,7 +41,7 @@ export default function Login() {
                     </div>
                 </div>
             </div>
-            <div className="mt-auto fixed-bottom">
+            <div className="fixed-bottom-0 h-min w-full mt-auto">
                 <Footer />
             </div>
         </div>
