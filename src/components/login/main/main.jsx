@@ -49,8 +49,8 @@ export default function Main() {
                     <span className="flex items-center"><BiSolidLockAlt />Usuários externos</span>
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                    <button className="bg-gray-100 text-base font-small p-2 mt-3 w-[30%] border rounded-3xl text-blue-700 hover:bg-gray-200">
-                        Entrar com <img src={gov} alt="" className="inline-block w-[40%] h-[10%]" />
+                    <button className="bg-gray-100 text-base font-small p-2 mt-3 w-auto border rounded-3xl text-blue-700 hover:bg-gray-200">
+                        Entrar com <img src={gov} alt="" className="inline-block w-16 h-[10%]" />
                     </button>
                 </div>
             </div>

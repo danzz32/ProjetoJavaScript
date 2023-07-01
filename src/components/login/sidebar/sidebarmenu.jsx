@@ -7,7 +7,8 @@ import * as IoMd from 'react-icons/io';
 import * as HiIcons from 'react-icons/hi';
 import * as TiIcons from 'react-icons/ti';
 import * as BsIcons from 'react-icons/bs';
-import * as AiIcons from 'react-icons/ai';
+import * as MdIcons from 'react-icons/md';
+import * as FiIcons from 'react-icons/fi';
 
 const logo = require('../../../images/suap1.png');
 const logo2 = require('../../../images/logo2.png');
@@ -24,10 +25,13 @@ export default function SidebarMenu() {
     const [showRelatorios, setShowRelatorios] = useState(false);
     const [showSolicitacoes, setShowSolicitacoes] = useState(false);
 
-    const SidebarItem = ({ title, onClick, showSubMenu, subMenu }) => (
+    const SidebarItem = ({ titleIcon, title, onClick, showSubMenu, subMenu }) => (
         <div className="w-[90%] pl-5">
             <button className="flex text-left text-lg w-full justify-start px-1 py-2 hover:text-lime-500 hover:font-semibold" onClick={onClick}>
-                {title}
+                <div className="flex items-center">
+                    {titleIcon}
+                    <span>{title}</span>
+                </div>
             </button>
             {showSubMenu && (
                 <ul>
@@ -185,68 +189,78 @@ export default function SidebarMenu() {
     return (
         <div className="flex">
             <div className="sidebar w-72 bg-zinc-800 opacity-80 text-zinc-400 min-h-min pl-5">
-                <div className="sidebar-logo flex px-2 pt-7">
-                    <img src={logo} alt="Logo" className="logo w-[40%]" />
+                <div className="sidebar-logo flex px-2 pt-7 pb-4">
+                    <img src={logo} alt="Logo" className="logo w-[40%] pr-2" />
                     <img src={logo2} alt="Logo 2" className="logo2 w-[50%]" />
                 </div>
                 <div className="sidebar-menu">
                     <div className="menu">
                         <ul className="nav-menu">
                             <SidebarItem
+                                titleIcon={<BiIcons.BiLogInCircle className="mr-2" />}
                                 title="Acessos"
                                 onClick={() => setShowAcessos(!showAcessos)}
                                 showSubMenu={showAcessos}
                                 subMenu={subMenuAcessos}
                             />
                             <SidebarItem
+                                titleIcon={<MdIcons.MdVerifiedUser className="mr-2" />}
                                 title="Autenticação"
                                 onClick={() => setShowAutenticacao(!showAutenticacao)}
                                 showSubMenu={showAutenticacao}
                                 subMenu={subMenuAutenticacao}
                             />
                             <SidebarItem
+                                titleIcon={<MdIcons.MdAssessment className="mr-2" />}
                                 title="Avaliações"
                                 onClick={() => setShowAvaliacoes(!showAvaliacoes)}
                                 showSubMenu={showAvaliacoes}
                                 subMenu={subMenuAvaliacoes}
                             />
                             <SidebarItem
+                                titleIcon={<FiIcons.FiAirplay className="mr-2" />}
                                 title="Balcão Digital"
                                 onClick={() => setShowBalcaoDigital(!showBalcaoDigital)}
                                 showSubMenu={showBalcaoDigital}
                                 subMenu={subMenuBalcaoDigital}
                             />
                             <SidebarItem
+                                titleIcon={<FaIcons.FaSearch className="mr-2" />}
                                 title="Consultas"
                                 onClick={() => setShowConsultas(!showConsultas)}
                                 showSubMenu={showConsultas}
                                 subMenu={subMenuConsultas}
                             />
                             <SidebarItem
+                                titleIcon={<BsIcons.BsBookmarksFill className="mr-2" />}
                                 title="Editora"
                                 onClick={() => setShowEditora(!showEditora)}
                                 showSubMenu={showEditora}
                                 subMenu={subMenuEditora}
                             />
                             <SidebarItem
+                                titleIcon={<BsIcons.BsCalendar2EventFill className="mr-2" />}
                                 title="Eventos"
                                 onClick={() => setShowEventos(!showEventos)}
                                 showSubMenu={showEventos}
                                 subMenu={subMenuEventos}
                             />
                             <SidebarItem
+                                titleIcon={<MdIcons.MdManageAccounts className="mr-2" />}
                                 title="Programa de Gestão"
                                 onClick={() => setShowProgramaGestao(!showProgramaGestao)}
                                 showSubMenu={showProgramaGestao}
                                 subMenu={subMenuGestaoDesempenho}
                             />
                             <SidebarItem
+                                titleIcon={<BiIcons.BiSolidReport className="mr-2" />}
                                 title="Relatórios"
                                 onClick={() => setShowRelatorios(!showRelatorios)}
                                 showSubMenu={showRelatorios}
                                 subMenu={subMenuRelatorios}
                             />
                             <SidebarItem
+                                titleIcon={<BiIcons.BiGitPullRequest className="mr-2" />}
                                 title="Solicitações"
                                 onClick={() => setShowSolicitacoes(!showSolicitacoes)}
                                 showSubMenu={showSolicitacoes}
